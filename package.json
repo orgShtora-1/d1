@@ -16,6 +16,14 @@
     "read-replication",
     "batch"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/orgShtora-1/d1.git"
+  },
+  "homepage": "https://github.com/orgShtora-1/d1#readme",
+  "bugs": {
+    "url": "https://github.com/orgShtora-1/d1/issues"
+  },
   "license": "MIT",
   "author": "airshakur88",
   "type": "module",
