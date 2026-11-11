@@ -1,0 +1,57 @@
+{
+  "name": "@shtora/d1",
+  "version": "0.1.0",
+  "description": "A zero-dependency TypeScript client for Cloudflare D1 with prepared queries, typed batch operations, native D1 results, and read-replication sessions.",
+  "keywords": [
+    "cloudflare",
+    "cloudflare-d1",
+    "d1",
+    "d1-client",
+    "workers",
+    "cloudflare-workers",
+    "sqlite",
+    "typescript",
+    "prepared-statements",
+    "database",
+    "read-replication",
+    "batch"
+  ],
+  "license": "MIT",
+  "author": "airshakur88",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "bun test",
+    "test:consumer": "bun run build && node tests/pack-consumer.mjs",
+    "typecheck": "bun check",
+    "prepublishOnly": "bun run typecheck && bun run test && bun run test:consumer"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261110.1",
+    "@types/bun": "latest",
+    "miniflare": "^4.20260730.0",
+    "typescript": "^7.0.2",
+    "wrangler": "4.151.0"
+  },
+  "peerDependencies": {
+    "@cloudflare/workers-types": "^5.20261110.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
